@@ -16,12 +16,10 @@ import torchvision.datasets as datasets
 import qresnet
 # os.environ['CUDA_VISIBLE_DEVICES'] = '1'      # Run it with CUDA_VISIBLE_DEVICES=1 python qtrainer_10_5.py --save-dir "models"
 
-# model_names = sorted(name for name in qresnet.__dict__
-#     if name.islower() and not name.startswith("__")
-#                      and name.startswith("qresnet")
-#                      and callable(qresnet.__dict__[name]))
-
-model_names = sorted(name for name in ["qresnet32"])
+model_names = sorted(name for name in qresnet.__dict__
+    if name.islower() and not name.startswith("__")
+                     and name.startswith("qresnet")
+                     and callable(qresnet.__dict__[name]))
 
 print(model_names)
 
