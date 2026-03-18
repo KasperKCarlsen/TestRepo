@@ -1,0 +1,13 @@
+Use the following command to send a file to the HCP
+    scp "folder_path" ` s244804@transfer.gbar.dtu.dk:~/TestRepo/Data
+
+Use the following command to send a folder to the HCP
+    scp -r "folder_path" ` s244804@transfer.gbar.dtu.dk:~/TestRepo/Data
+
+Use the following command to check available devices
+    nvidia-smi
+
+Use the following command to choose available device
+    CUDA_VISIBLE_DEVICES= available_device, python_script.py
+
+    CUDA_VISIBLE_DEVICES=1 python TestHPC.py
