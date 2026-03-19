@@ -1,8 +1,15 @@
-Use the following command to send a file to the HCP
+Connecting to HPC:
+    ssh s244804@login1.gbar.dtu.dk
+
+To choose a node of GPU's check the link
+    https://www.hpc.dtu.dk/?page_id=2129#LSF
+
+Use the following command to send a file to the HCP (in PowerShell)
     scp "folder_path" ` s244804@transfer.gbar.dtu.dk:~/TestRepo/Data
 
-Use the following command to send a folder to the HCP
+Use the following command to send a folder to the HCP (in PowerShell)
     scp -r "folder_path" ` s244804@transfer.gbar.dtu.dk:~/TestRepo/Data
+    scp -r s244804@transfer.gbar.dtu.dk:~/TestRepo/Data ' "C:/Users/kaspe/Desktop/DTU/4. Semester/Project Work/HPCLocal"
 
 Use the following command to check available devices
     nvidia-smi

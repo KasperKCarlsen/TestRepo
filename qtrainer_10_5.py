@@ -14,7 +14,7 @@ import torch.utils.data
 import torchvision.transforms as transforms
 import torchvision.datasets as datasets
 import qresnet
-# os.environ['CUDA_VISIBLE_DEVICES'] = '1'      # Run it with CUDA_VISIBLE_DEVICES=1 python qtrainer_10_5.py --save-dir "models" --arch qresnet32
+# os.environ['CUDA_VISIBLE_DEVICES'] = '1'      # Run it with CUDA_VISIBLE_DEVICES=1,2 python qtrainer_10_5.py --save-dir "models" --arch qresnet32 --epochs 50
 
 model_names = sorted(name for name in qresnet.__dict__
     if name.islower() and not name.startswith("__")
@@ -186,7 +186,7 @@ def main():
 
 
 
-    fp = open('QResNet/ITL/q_resnet/precision_10_5.txt', 'w')  
+    fp = open('results/precision_10_5.txt', 'w')  
     for j in range(prec.shape[1]):
 
                 fp.write( '%1.10f,' % prec[0,j] ),
@@ -194,7 +194,7 @@ def main():
     fp.close()
 
 
-    fp = open('QResNet/ITL/q_resnet/precision_training_10_5.txt', 'w')  
+    fp = open('results/precision_training_10_5.txt', 'w')  
     for j in range(prec_train.shape[1]):
 
                 fp.write( '%1.10f,' % prec_train[0,j] ),
