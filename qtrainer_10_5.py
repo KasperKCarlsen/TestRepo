@@ -141,7 +141,7 @@ def main():
 
     print("******************")
     print(args.start_epoch)
-    print(optimizer.param_groups[0]["lr"])
+    print(optimizer.param_groups[0])
     lr_scheduler = torch.optim.lr_scheduler.MultiStepLR(optimizer,
                                                         milestones=[100, 150], last_epoch=args.start_epoch - 1)
     
