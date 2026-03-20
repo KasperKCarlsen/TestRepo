@@ -15,6 +15,7 @@ import torchvision.transforms as transforms
 import torchvision.datasets as datasets
 import qresnet
 # os.environ['CUDA_VISIBLE_DEVICES'] = '1'      # Run it with CUDA_VISIBLE_DEVICES=1,2 python qtrainer_10_5.py --save-dir "models" --arch qresnet32 --epochs 50
+# CUDA_VISIBLE_DEVICES=1 python qtrainer_10_5.py --save-dir "models/qresnet44" --arch qresnet44 --epochs 100 --resume "models/qresnet44/checkpoint.th"
 
 model_names = sorted(name for name in qresnet.__dict__
     if name.islower() and not name.startswith("__")
@@ -138,6 +139,8 @@ def main():
                                 momentum=args.momentum,
                                 weight_decay=args.weight_decay)
 
+    print("******************")
+    print(args.start_epoch)
     lr_scheduler = torch.optim.lr_scheduler.MultiStepLR(optimizer,
                                                         milestones=[100, 150], last_epoch=args.start_epoch - 1)
     

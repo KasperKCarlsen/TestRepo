@@ -107,7 +107,6 @@ class BasicBlock(nn.Module):
             out = self.bn1(self.conv1r(x)*self.conv1g(x)+self.conv1b(x.pow(2)))
             out = self.bn2(self.conv2r(out)*self.conv2g(out)+self.conv2b(out.pow(2)))
             out += self.shortcut(x)
-            out = out
         return out
     
 
