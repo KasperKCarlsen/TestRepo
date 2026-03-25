@@ -16,6 +16,7 @@ import torchvision.datasets as datasets
 import qresnet
 # os.environ['CUDA_VISIBLE_DEVICES'] = '1'      # Run it with CUDA_VISIBLE_DEVICES=1,2 python qtrainer_10_5.py --save-dir "models" --arch qresnet32 --epochs 50
 # CUDA_VISIBLE_DEVICES=1 python qtrainer_10_5.py --save-dir "models/qresnet44" --arch qresnet44 --epochs 100 --resume "models/qresnet44/checkpoint.th"
+# CUDA_VISIBLE_DEVICES=1 python qtrainer_10_5.py --save-dir "models/qresnet56" --arch qresnet56 --epochs 100
 
 model_names = sorted(name for name in qresnet.__dict__
     if name.islower() and not name.startswith("__")
@@ -187,15 +188,15 @@ def main():
 
 
 
-    fp = open('results/precision_10_5.txt', 'w')  
+    fp = open(f'results/{args.arch}/precision_10_5.txt', 'w')  
     for j in range(prec.shape[1]):
 
                 fp.write( '%1.10f,' % prec[0,j] ),
                 
     fp.close()
 
-
-    fp = open('results/precision_training_10_5.txt', 'w')  
+    training_path = os.join
+    fp = open(f'results/{args.arch}/precision_training_10_5.txt', 'w')  
     for j in range(prec_train.shape[1]):
 
                 fp.write( '%1.10f,' % prec_train[0,j] ),
