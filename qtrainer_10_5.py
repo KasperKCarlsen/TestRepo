@@ -187,7 +187,7 @@ def main():
         }, is_best, filename=os.path.join(args.save_dir, 'model.th'))
 
 
-    os.makedirs(f"models/{args.arch}", exist_ok=True)       # creates the directory if it doesn't exist
+    os.makedirs(f"results/{args.arch}", exist_ok=True)       # creates the directory if it doesn't exist
     fp = open(f'results/{args.arch}/precision_10_5.txt', 'w+')  
     for j in range(prec.shape[1]):
 
