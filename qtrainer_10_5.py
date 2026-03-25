@@ -188,15 +188,14 @@ def main():
 
 
 
-    fp = open(f'results/{args.arch}/precision_10_5.txt', 'w')  
+    fp = open(f'results/{args.arch}/precision_10_5.txt', 'w+')  
     for j in range(prec.shape[1]):
 
                 fp.write( '%1.10f,' % prec[0,j] ),
                 
     fp.close()
 
-    training_path = os.join
-    fp = open(f'results/{args.arch}/precision_training_10_5.txt', 'w')  
+    fp = open(f'results/{args.arch}/precision_training_10_5.txt', 'w+')  
     for j in range(prec_train.shape[1]):
 
                 fp.write( '%1.10f,' % prec_train[0,j] ),
