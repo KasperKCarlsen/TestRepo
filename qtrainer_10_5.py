@@ -16,7 +16,7 @@ import torchvision.datasets as datasets
 import qresnet
 # os.environ['CUDA_VISIBLE_DEVICES'] = '1'      # Run it with CUDA_VISIBLE_DEVICES=1,2 python qtrainer_10_5.py --save-dir "models" --arch qresnet32 --epochs 50
 # CUDA_VISIBLE_DEVICES=1 python qtrainer_10_5.py --save-dir "models/qresnet44" --arch qresnet44 --epochs 100 --resume "models/qresnet44/checkpoint.th"
-# CUDA_VISIBLE_DEVICES=1 python qtrainer_10_5.py --save-dir "models/qresnet56" --arch qresnet56 --epochs 100
+# CUDA_VISIBLE_DEVICES=1 python qtrainer_10_5.py --save-dir "models/qresnet20" --arch qresnet20 --epochs 100
 
 model_names = sorted(name for name in qresnet.__dict__
     if name.islower() and not name.startswith("__")
